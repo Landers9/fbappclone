@@ -1,0 +1,28 @@
+<div class="container mt-5 mb-5">
+  <div class="row" style="margin-top:10%;">
+    <div class="col-sm-6" style="margin-top:50px;">
+      <h1 class="text-primary">facebook</h1>
+      <p>Avec facebook partagez et restez en contact avec votre entourage</p>
+    </div>
+    <div class="col-sm-6">
+      <div class="card" style="">
+        <div class="card-body">
+          <%= form_with(scope: :session, url: sessions_path, local: true) do |f| %>
+            <div class="field form-group">
+              <%= f.email_field :email, placeholder: "Email" ,class: "form-control" %>
+            </div>
+            <div class="field form-group">
+              <%= f.password_field :password, placeholder: "Password" ,class: "form-control" %>
+              <br>
+              <a href="#" class="text-center">password forgot ?</a>
+            </div>
+            <%= f.submit "Login", class: "btn btn-primary btn-lg btn-block  text-white text-center"%>
+          <% end %>
+          <hr>
+          <p>If you don't have account</p>
+          <a href="<%= new_user_path %>" class="btn btn-success btn-lg btn-block text-white">Sign up</a>
+       </div>
+     </div>
+    </div>
+  </div>
+<div>

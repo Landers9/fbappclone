@@ -1,0 +1,142 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container-fluid" style="margin-top:100px;">
+    <div class="row">
+        <div class="col-md-3 mb-5 mt-4">
+            <div class="card mb-5">
+                <div class="card-body">
+                    <div class="h5"><%= current_user.first_name %></div>
+                    <div class="h7 text-muted">Fullname : <%= current_user.last_name %></div>
+                    <div class="h7">Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js,
+                        etc.
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="h6 text-muted">Followers</div>
+                        <div class="h5">5.2342</div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="h6 text-muted">Following</div>
+                        <div class="h5">6758</div>
+                    </li>
+                    <li class="list-group-item">En ligne il y 2h</li>
+                </ul>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <div class="h5"><%= current_user.first_name %></div>
+                    <div class="h7 text-muted">Fullname : <%= current_user.last_name %></div>
+                    <div class="h7">Developer of web applications, JavaScript, PHP, Java, Python, Ruby, Java, Node.js,
+                        etc.
+                    </div>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <div class="h6 text-muted">Followers</div>
+                        <div class="h5">5.2342</div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="h6 text-muted">Following</div>
+                        <div class="h5">6758</div>
+                    </li>
+                    <li class="list-group-item">En ligne il y 2h</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6 gedf-main mb-5 mt-4">
+            <%= link_to 'New Post', new_post_path, class:"btn btn-block btn-primary text-center mb-4" %>
+
+            <% @posts.each do |post| %>
+              <div class="card gedf-card mb-5 mt-5">
+                  <div class="card-header">
+                      <div class="d-flex justify-content-between align-items-center">
+                          <div class="d-flex justify-content-between align-items-center">
+                              <div class="mr-2">
+                                  <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" alt="">
+                              </div>
+                              <div class="ml-2">
+                                  <div class="h5 m-0">
+                                    <%= current_user.first_name %>
+                                  </div>
+                                  <div class="h7 text-muted">
+                                    <%= current_user.first_name + " a publié" %>
+                                  </div>
+                              </div>
+                          </div>
+                          <div>
+                              <div class="dropdown">
+                                  <button class="btn btn-link dropdown-toggle" type="button" id="gedf-drop1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                      <i class="fa fa-ellipsis-h"></i>
+                                  </button>
+                                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="gedf-drop1">
+                                      <div class="h6 dropdown-header">Configuration</div>
+                                      <%= link_to 'Show', post, class:"dropdown-item" %>
+                                      <%= link_to 'Edit', edit_post_path(post), class:"dropdown-item" %>
+                                      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class:"dropdown-item" %>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="card-body">
+                      <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>10 min ago</div>
+
+                      <div class="mb-3">
+                        <img src="<%= post.image %>" class="img-fluid" alt="">
+                      </div>
+                      <p class="card-text">
+                        <%= post.content %>
+                      </p>
+                  </div>
+                  <div class="card-footer">
+                      <a href="#" class="card-link"><i class="fa fa-gittip"></i> Like</a>
+                      <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                      <a href="#" class="card-link"><i class="fa fa-mail-forward"></i> Share</a>
+                  </div>
+              </div>
+            <% end %>
+
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2FFlo2Fla%2Fposts%2F386045719546148&show_text=true&width=500" width="500" height="666" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" class="mb-5 mt-3">
+            </iframe>
+
+            <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fweb.facebook.com%2Fsamuel.mevognon.5%2Fposts%2F883175722618878&show_text=true&width=500" width="500" height="471" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        </div>
+        <div class="col-md-3 mb-5 mt-4">
+            <div class="card gedf-card">
+                <div class="card-body">
+                    <h5 class="card-title">Sugestions de groupes</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Les hackers</h6>
+                    <p class="card-text">Page exclusivement dediée au partage de connaissances en piratage informatique</p>
+                    <a href="#" class="card-link btn btn-primary">Rejoindre</a>
+                    <a href="#" class="card-link">Ne plus voir</a>
+                </div>
+            </div>
+            <div class="card gedf-card mb-5 mt-4">
+                <div class="card-body">
+                    <h5 class="card-title">Evenements</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Ino's </h6>
+                    <p class="card-text">Aujourd'hui c'est l'anniversaire de Inos'B</p>
+                </div>
+            </div>
+            <div class="card gedf-card">
+                <div class="card-body">
+                    <h5 class="card-title">Sugestions de groupes</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Les prof d web</h6>
+                    <p class="card-text">Page exclusivement dediée au partage de connaissances en piratage informatique</p>
+                    <a href="#" class="card-link btn btn-primary">Rejoindre</a>
+                    <a href="#" class="card-link">Ne plus voir</a>
+                </div>
+            </div>
+            <div class="card gedf-card">
+                <div class="card-body">
+                    <h5 class="card-title">Sugestions de groupes</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Les PROGRAMMEURS</h6>
+                    <p class="card-text">Page exclusivement dediée au partage de connaissances en programmation informatique</p>
+                    <a href="#" class="card-link btn btn-primary">Rejoindre</a>
+                    <a href="#" class="card-link">Ne plus voir</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

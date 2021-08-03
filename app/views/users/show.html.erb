@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+<div class="row" style="margin-top:100px;">
+  <div class="col-3">
+
+  </div>
+  <div class="col-6 mt-5">
+    <div class="card">
+      <h2 class="card-title text-info mt-2 text-center">Your Informations</h2>
+      <div class="card-body">
+        <p><span class="text-primary">First Name:</span> <%= @user.first_name %></p>
+        <p><span class="text-primary">Last Name:</span> <%= @user.last_name %></p>
+        <p><span class="text-primary">Email Adress:</span> <%= @user.email%></p>
+        <p><span class="text-primary">Gender:</span> <%= @user.gender %></p>
+      </div>
+    </div>
+    <%= link_to 'Back', posts_path, class:"btn btn-danger btn-block mt-3" %>
+  </div>
+
+  <div class="col-3">
+
+  </div>
+</div>
